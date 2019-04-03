@@ -1,0 +1,435 @@
+ /**********************************************************************************************************/
+/***************************              GLOBAL SETTINGS                      ***************************/
+/********************************************************************************************************/
+	/** Colors Schemes
+		Orange/Brown: #98513d;
+		Red/Brown: #5c1111;
+		Dark Blue: #002664;
+		Gold border: #b29e74;
+		Tan: #c4bdaf;
+	**/
+
+	* {
+	    box-sizing: border-box;
+	    font-family: sans-serif;}
+
+ 	button {
+		background-color: transparent;
+		background-image: none;
+		border-color: transparent;
+		border: none;
+		box-shadow: none;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 0.8em;
+		text-shadow: none;}
+
+	button:before {display: none;}
+	button:hover {background-color: transparent;}
+
+	button[type="roll"],
+	button[type="action"] {
+		font-size: 1em;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	button[type="roll"] {
+		text-transform: uppercase;
+	}
+
+	button[type="action"] {
+		background-color          : #ddd;
+		border-bottom             : 2px solid #666;
+		border-bottom-right-radius: 2px;
+		border-color              : #aaa;
+		border-radius             : 5px;
+		border-right              : 3px solid #999;
+		border-style              : outset;
+	}
+
+	div {
+		display         : inline-block;
+		vertical-align: top;
+		width: 100%;
+	}
+
+	div > div {
+		border: 1px solid #002664; /** REMOVE LATER */
+	}
+
+	fieldset {
+		background: transparent;}
+
+	h1 {
+		background-color: #002664;
+		color           : #fff;
+		font-family     : initial;
+		font-size       : 1.5em;
+		font-variant    : small-caps;
+		line-height     : 20px;
+		text-align      : center;
+		text-transform  : uppercase;
+		width           : 100%;
+	}
+
+	input[type="text"],
+	input[type="number"] {
+		border: 1px solid #5c1111;
+		border-radius: 0px;
+	}	
+
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="text"]::-moz-placeholder,
+	input[type="text"]::-ms-input-placeholder,
+	input[type="text"]::-moz-placeholder {
+		font-variant: small-caps;
+		text-transform: uppercase;
+	}
+
+	input[type="text"]{
+		width: 100%;
+	}	
+
+	label {
+		color: #fff;
+		display: inline-block;
+		padding-right: 0px;
+		margin-bottom: 2px;
+		text-transform: uppercase;
+		width:fit-content;
+		vertical-align: top;
+	}
+
+	span {
+		word-break: break-word;}
+
+	textarea {
+		border-bottom: 1px dotted #5c1111;
+		font-size: 12px;
+		font-weight: normal;
+		height: 50px;
+		line-height: 18px;
+		overflow-wrap: break-word;
+		overflow: hidden;
+		padding: 2px;
+		resize: vertical;
+		text-align: left;
+		vertical-align: top;
+		white-space: pre-line;}
+
+	.charsheet {
+		border: 2px solid #5c1111; /** REMOVE LATER */
+		background-color: #c4bdaf;
+		margin-left: -1%;
+		width: 860px;}
+
+	button.sheet-pictos {
+		font-family: "pictos";}
+
+/**********************************************************************************************************/
+/***************************              HIGHLIGHT BUTTONS                    ***************************/
+/********************************************************************************************************/
+
+	input.sheet-whisper-toggle[value*="gm"] + button[name*="whisper"],
+	input.sheet-type[value="core"] ~ div.sheet-tabs button[name*="core"],
+	input.sheet-type[value="npc"] ~ div.sheet-tabs button[name*="npc"],
+	input.sheet-type[value="options"] ~ div.sheet-tabs button[name*="options"] {
+		color           : #fff;
+		background-color: #7b1915;
+		box-shadow      : inset 0px 0px 3px 1px #e31715;}
+
+/******************************************************************************************/
+/***************************              PC                   ***************************/
+/****************************************************************************************/
+div.sheet-ability,
+div.sheet-classdc,
+div.sheet-armorclass,
+div.sheet-savingthrows,
+div.sheet-hitpoints,
+div.sheet-perception {
+	background-color: #98513d;
+}
+
+input.sheet-2em {
+	width: 2em;
+}
+
+span.sheet-darkred {
+	background-color: #5c1111;
+}
+
+span.sheet-display {
+	display         : inline-block;
+	width           : 3.1em;
+	height          : 2em;
+	border          : 1px solid #5c1111;
+	background-color: #ddd;
+	text-align      : center;
+	color           : #000;
+	padding         : 0.3em;
+}
+
+div.sheet-ability span.sheet-display,
+div.sheet-classdc span.sheet-display {
+	border-radius: 10px;
+}
+
+span.sheet-sublabel {
+	font-size: 0.6em;
+}
+
+div.sheet-dcbase {
+	color: #fff;
+	width: 10%;
+}
+
+div.sheet-bonus {
+	width: 20%;
+}
+
+/* Character Details row */
+div.sheet-pfrow {
+	width: 100%;
+}
+
+/* Character Sheet column */
+div.sheet-character-row div:nth-of-type(1) {
+	width: 20%;
+}
+
+/* Character Name column */
+div.sheet-character-row div:nth-of-type(2) {
+	width: 35%;
+}
+
+/* Ancestry column */
+div.sheet-character-row div:nth-of-type(3) {
+	width: 33%;
+}
+
+/* Level column */
+div.sheet-character-row div:nth-of-type(4) {
+	width: 10%;
+}
+
+/* Ability Scores, Armor Class, and Hit Points row */
+/* Ability Scores column */
+div.sheet-ability-row button[type="action"] {
+	position: absolute;
+}
+
+div.sheet-ability-row div.sheet-ability-col:nth-of-type(1) {
+	width: 35%;
+}
+
+/* Armor Class column */
+div.sheet-ability-row div.sheet-ability-col:nth-of-type(2) {
+	width: 44%;
+}
+
+/* Hit Points column */
+div.sheet-ability-row div.sheet-ability-col:nth-of-type(3) {
+	width: 20%;
+}
+
+/* Ability Section */
+div.sheet-ability input[type="number"] {
+	height: 2.5em;
+}
+
+div.sheet-ability input[type="text"][name*="temporary"] {
+	width: 3.5em;
+}
+
+/* Ability Scores Modifier*/
+div.sheet-ability div.sheet-ability-modifier {
+	width: 35%;
+}
+
+/* Ability Scores Score */
+div.sheet-ability div.sheet-ability-score {
+	width: 60%;
+}
+
+/* Class DC section */
+div.sheet-classdc label {
+	display: inline-block;
+	width: fit-content;
+}
+
+/* Armor Class circle */
+div.sheet-armorclass-circle {
+	border          : 2px solid #b29e74;
+	border-radius   : 3em;
+	background-color: #ddd;
+	height: 5em;
+	width: 5em;
+}
+
+div.sheet-armorclass-circle label[title="ac"] {
+	padding-top: 5px;
+	width: 100%;
+}
+
+div.sheet-armorclass-circle label > span[data-i18n="ac"] {
+	color: #5c1111;
+	margin-left: 30%;
+}
+
+/* Armor Class main area */
+div.sheet-armorclass-main {
+	width: 81%;
+}
+
+
+/**********************************************************************************************************/
+/*********************                  Show & Hide Settings                   ***************************/
+/********************************************************************************************************/
+div.sheet-settings {
+	height: 0px;
+	transition: height 2s;
+	-webkit-transition: height 2s; /* Safari */
+	overflow   : hidden;
+}
+
+/* Show the Settings section if the hidden input contains the keyword */
+input[name="attr_toggles"][value*="strength"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-strength-row div.sheet-settings,
+input[name="attr_toggles"][value*="dexterity"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-dexterity-row div.sheet-settings,
+input[name="attr_toggles"][value*="constitution"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-constitution-row div.sheet-settings,
+input[name="attr_toggles"][value*="intelligence"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-intelligence-row div.sheet-settings,
+input[name="attr_toggles"][value*="wisdom"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-wisdom-row div.sheet-settings,
+input[name="attr_toggles"][value*="charisma"] ~ div.sheet-ability-row div.sheet-ability-col div.sheet-ability div.sheet-charisma-row div.sheet-settings,
+input[name="attr_toggles"][value*="class_dc"] ~ div.sheet-ability-row div.sheet-classdc div.sheet-settings  {
+	display: block;
+	height: 8.75em;
+}
+
+/**********************************************************************************************************/
+/***************************                  FOOTER                           ***************************/
+/********************************************************************************************************/
+	.sheet-footer {
+		border: none;
+		font-size: 0.55em;
+		line-height: 15px;
+		margin-top: 15px;
+		text-align: left;
+		width: 700px;}
+
+/**********************************************************************************************************/
+/***************************             REPEATING SECTIONS                          *********************/
+/********************************************************************************************************/
+	.repcontainer .repitem {
+
+	};
+
+	/* This will make the Add & Modify words transparent so that only our symbols below show up */
+	 button.btn.repcontrol_add,
+	 button.btn.repcontrol_edit  {
+	 	color: transparent;
+	 }
+
+	 /* This will put icons next to the buttons. A `+` for Add and a lock for edit */
+	.repcontrol .repcontrol_edit:after,
+	.repcontrol .repcontrol_add:after  {
+	 	color           : #111518;
+	 	font-family     : pictos;
+	    font-size       : 2.5em;}
+
+	.repcontrol .repcontrol_edit:after {
+		content: '(';
+	}
+
+	.repcontrol .repcontrol_add:after {
+		content: '&';
+	}
+
+	.editmode ~ .repcontrol .repcontrol_edit:after {
+		content: ')';
+	}
+
+	/* These are the buttons that appear after the repcontrol_edit is clicked*/
+	.itemcontrol {
+		z-index: 10;
+	}
+
+	.itemcontrol .repcontrol_del,
+	.itemcontrol .repcontrol_move {
+	    font-size: 18px;
+	    margin-top: 0px;
+	    padding: 0px;
+	    width: 15px;}
+
+	.itemcontrol .repcontrol_del {
+		background-color: darkred;
+		font-family: pictos;}
+
+/**********************************************************************************************************/
+/***************************                 ROLL TEMPLATE                           *********************/
+/********************************************************************************************************/
+	.sheet-rolltemplate-rolls {
+
+	}
+
+	.sheet-rolltemplate-rolls .sheet-template-body {
+		border    : 1px solid #000;
+		text-align: center;
+	}
+
+	.sheet-rolltemplate-rolls .sheet-template-header {
+		background-color: white;
+		border          : 1px solid #000;
+		border-bottom   : 2px solid #000;
+		color           : black;
+		font-size       : 20px;
+		font-variant    : small-caps;
+		letter-spacing  : 2px;
+		padding         : 4px 0px 3px 0px;
+		text-align      : center;
+		text-transform  : capitalize;
+	}
+
+	.sheet-rolltemplate-rolls .sheet-template-row {
+		background-color: #555;
+	}
+
+	/* Use this to alternate the background colors for each row */
+	.sheet-rolltemplate-rolls .sheet-template-row:nth-child(2n+0) {
+		background-color: #1c1c1c;
+	}
+
+	/* Remove some fo the built in styles around rolls */
+	.sheet-rolltemplate-rolls .inlinerollresult {
+		background-color: transparent;
+		border          : none;
+		color           : black;
+		display         :inline-block;
+		font-size       : 25px;
+		padding         : 5px;
+	}
+
+	.sheet-rolltemplate-rolls .inlinerollresult.fullfail,
+	.sheet-rolltemplate-rolls .inlinerollresult.fullcrit,
+	.sheet-rolltemplate-rolls.inlinerollresult.importantroll {
+		border: none;
+	}
+
+	/* Change the colors of Full Fails & Full Crits from their built in defaults */
+	.sheet-rolltemplate-rolls .inlinerollresult.fullfail {
+		color: white;
+	}
+
+	.sheet-rolltemplate-rolls .inlinerollresult.fullcrit {
+		color: white;
+	}
+
+
+/**********************************************************************************************************/
+/***************************                 FIREFOX                           ***************************/
+/********************************************************************************************************/
+	input[type=number]::-webkit-outer-spin-button,
+	input[type=number]::-webkit-inner-spin-button {
+	    -webkit-appearance: none;
+	    margin: 0;}
+
+	input[type=number] {
+	    -moz-appearance:textfield;}

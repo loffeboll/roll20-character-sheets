@@ -72,6 +72,12 @@
 		width           : 100%;
 	}
 
+	h2 {
+		color         : #fff;
+		font-size     : 1em;
+		text-transform: uppercase;
+	}
+
 	input[type="text"],
 	input[type="number"] {
 		border: 1px solid #5c1111;
@@ -120,7 +126,7 @@
 	.charsheet {
 		border: 2px solid #5c1111; /** REMOVE LATER */
 		background-color: #c4bdaf;
-		margin-left: -1%;
+		margin-left: -2%;
 		width: 860px;}
 
 	button.sheet-pictos {
@@ -156,7 +162,19 @@ input.sheet-2em {
 
 span.sheet-darkred {
 	background-color: #5c1111;
+	padding         : 3px;
 }
+
+span.sheet-redstroke {
+	color: #fff;
+	text-shadow:
+       3px 3px 0 #5c1111,
+     -1px -1px 0 #5c1111,  
+      1px -1px 0 #5c1111,
+      -1px 1px 0 #5c1111,
+       1px 1px 0 #5c1111;
+}
+
 
 span.sheet-display {
 	display         : inline-block;
@@ -184,6 +202,7 @@ div.sheet-dcbase {
 }
 
 div.sheet-bonus {
+	display: inline;
 	width: 20%;
 }
 
@@ -279,6 +298,43 @@ div.sheet-armorclass-circle label > span[data-i18n="ac"] {
 /* Armor Class main area */
 div.sheet-armorclass-main {
 	width: 81%;
+}
+
+/* Unarmored Row in Armor Class */
+div.sheet-armorclass-sub-row {
+	width: 24%;
+}
+
+/* Shield row in Armor Class */
+div.sheet-armorclass-sub-row span[data-i18n="shield"] {
+	text-transform: capitalize;
+}
+
+/* The + found in the circle of Shield input */
+div.sheet-armorclass-shield span:nth-of-type(2) {
+	color: #5c1111;
+}
+
+div.sheet-armorclass-shield input {
+	background-color: #fff;
+	border          : 2px solid #5c1111;
+	border-radius   : 3em;
+	height          : 4em;
+	width           : 4em;
+}
+
+/* Saving Throws */
+div.sheet-savingthrows-col {
+	width: 32%;
+}
+
+div.sheet-savingthrows-col input[name="attr_saving_throws_notes"] {
+	width: 100%;
+}
+
+div.sheet-savingthrows-row label[title="notes"] {
+	color: #000;
+	width: 100%;
 }
 
 

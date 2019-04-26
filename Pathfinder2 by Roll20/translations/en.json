@@ -42,5 +42,16 @@
 	"armor_class": "armor class",
 	"ac": "ac",
 	"or": "or",
-	"cap": "cap"
+	"cap": "cap",
+	"shield": "shield",
+	"hardness": "hardness",
+	"heavy": "heavy",
+	"medium": "medium",
+	"light": "light",
+	"unarmored": "unarmored",
+	"bt": "bt",
+	"hp": "hp",
+	"max": "max",
+	"saving_throws": "saving throws",
+	"fortitude": "fortitude"
 }
